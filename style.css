@@ -1,0 +1,155 @@
+/* --- Variabel Warna --- */
+:root {
+    --bg-color: #F8E8DA;
+    --text-color: #4A2B18;
+    --border-color: #4A2B18;
+    --nav-bg-transparent: rgba(248, 232, 218, 0.85);
+    --nav-pill-bg: #FFFFFF;
+    --social-pill-bg: #F0D5C1;
+    --timeline-line: #D1A582;
+}
+[data-theme="dark"] {
+    --bg-color: #36312D;
+    --text-color: #F8E8DA;
+    --border-color: #F8E8DA;
+    --nav-bg-transparent: rgba(54, 49, 45, 0.85);
+    --nav-pill-bg: #2D2A28;
+    --social-pill-bg: #4A443F;
+    --timeline-line: #F8E8DA;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+body { font-family: 'Quicksand', sans-serif; background-color: var(--bg-color); color: var(--text-color); overflow-x: hidden; transition: background-color 0.4s ease, color 0.4s ease; font-weight: 500; }
+h1, h2 { font-family: 'Nunito', sans-serif; font-weight: 800; }
+.mt-3 { margin-top: 20px; }
+
+/* --- Navbar Default --- */
+nav {
+    position: fixed; top: 0; left: 0; right: 0; width: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 8%; background-color: var(--nav-bg-transparent); backdrop-filter: blur(10px);
+    z-index: 1000; border-radius: 0;
+    transition: top 0.5s ease, left 0.5s ease, right 0.5s ease, width 0.5s ease, padding 0.5s ease, border-radius 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;
+}
+nav.nav-pill { top: 15px; left: 4%; right: 4%; width: 92%; border-radius: 50px; padding: 15px 4.15%; background-color: var(--nav-pill-bg); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+.nav-links { list-style: none; display: flex; gap: 30px; transition: all 0.5s ease; }
+.nav-links a { text-decoration: none; color: var(--text-color); font-weight: 700; font-size: 1.05rem; position: relative; padding-bottom: 8px; }
+.nav-links a::after { content: ''; position: absolute; left: 0; bottom: 0; height: 3.5px; border-radius: 5px; background-color: var(--text-color); width: 0; transition: width 0.4s ease-in-out; }
+.nav-links a.active::after { width: 100%; } 
+.nav-links a.active-half::after { width: 40%; } 
+.menu-toggle { display: none; cursor: pointer; font-size: 1.5rem; color: var(--text-color); }
+
+/* --- Theme Toggle --- */
+.toggle-container { position: relative; }
+.theme-checkbox { display: none; }
+.theme-label { background-color: var(--social-pill-bg); border-radius: 50px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 5px; height: 30px; width: 60px; position: relative; }
+.theme-label .fa-moon { color: #f1c40f; font-size: 14px; margin-left: 5px;}
+.theme-label .fa-sun { color: #f39c12; font-size: 14px; margin-right: 5px;}
+.theme-label .ball { background-color: var(--text-color); border-radius: 50%; position: absolute; top: 3px; left: 4px; height: 24px; width: 24px; transition: transform 0.3s linear; }
+.theme-checkbox:checked + .theme-label .ball { transform: translateX(28px); }
+
+/* --- Layout Sections --- */
+section { min-height: 100vh; padding: 120px 8% 60px; display: flex; flex-direction: column; justify-content: center; }
+
+/* --- Hero --- */
+.section-hero { flex-direction: row; align-items: center; justify-content: space-between; }
+.hero-box { border: 2px dashed var(--border-color); border-radius: 25px; padding: 30px 50px; display: inline-block; margin-bottom: 25px; }
+.hero-box h1 { font-size: 3.5rem; line-height: 1.2; letter-spacing: 2px; }
+.hero-desc { font-size: 1.15rem; line-height: 1.8; text-align: left; font-weight: 600; }
+.hero-image img { width: 100%; max-width: 450px; object-fit: cover; }
+
+/* --- Section Titles --- */
+.section-title { text-align: center; margin-bottom: 50px; }
+.section-title h2 { display: inline-block; border: 2px dashed var(--border-color); border-radius: 30px; padding: 12px 35px; font-size: 1.25rem; }
+
+/* --- Skill --- */
+.skill-wrapper { display: flex; align-items: center; justify-content: space-evenly; flex-wrap: wrap; gap: 40px; }
+.skill-image img { width: 100%; max-width: 350px; }
+.skill-timeline { position: relative; width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 40px; padding: 20px 0; }
+.line-center { position: absolute; left: 50%; top: 0; bottom: 0; border-left: 2px dotted var(--timeline-line); transform: translateX(-50%); }
+.timeline-row { display: flex; width: 100%; }
+.time-content { display: flex; align-items: center; width: 50%; }
+.time-content.left { justify-content: flex-end; }
+.time-content.right { justify-content: flex-start; margin-left: 50%; }
+.time-content span { font-family: 'Nunito', sans-serif; font-weight: 800; font-style: italic; font-size: 1.1rem; }
+.time-content .dot { width: 14px; height: 14px; border: 2px solid var(--border-color); border-radius: 50%; background: var(--bg-color); flex-shrink: 0; position: relative; z-index: 2; }
+.time-content .h-line { width: 45px; border-top: 2px dotted var(--timeline-line); flex-shrink: 0; }
+.time-content.left span { margin-right: 15px; }
+.time-content.left .h-line { margin-left: -2px; } 
+.time-content.right span { margin-left: 15px; }
+.time-content.right .h-line { margin-right: -2px; }
+
+/* --- Experience --- */
+.exp-cards { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; flex-wrap: wrap; }
+.card img { width: 200px; height: 200px; object-fit: cover; border-radius: 10px; }
+.exp-text { max-width: 800px; margin: 0 auto; line-height: 1.8; text-align: justify; font-size: 1.1rem; font-weight: 600;}
+
+/* --- Project --- */
+.section-project { min-height: 150vh; }
+.project-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 15px; width: 100%; }
+.project-item img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+.project-item.large { grid-column: span 2; grid-row: span 2; }
+
+/* --- Contact --- */
+.section-contact { flex-direction: row; align-items: center; justify-content: center; gap: 80px; }
+.social-pill { background-color: var(--social-pill-bg); padding: 25px 20px; border-radius: 50px; display: flex; flex-direction: column; gap: 20px; }
+.social-icon { display: flex; justify-content: center; align-items: center; width: 45px; height: 45px; border-radius: 50%; color: #FFFFFF; font-size: 1.5rem; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.social-icon:hover { transform: scale(1.15) translateY(-3px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+.social-icon.insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.social-icon.fb { background: #1877F2; }
+.social-icon.tiktok { background: #000000; }
+.social-icon.linkedin { background: #0A66C2; border-radius: 12px; }
+.quote-box { border: 2px dashed var(--border-color); border-radius: 20px; padding: 40px; max-width: 500px; text-align: left; }
+.quote-box p { font-size: 1.1rem; line-height: 1.8; }
+.quote-box .author { display: block; text-align: right; margin-top: 20px; font-family: 'Alex Brush', cursive; font-size: 2rem; }
+
+/* --- WhatsApp Bubble Chat --- */
+.wa-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25D366; color: #FFF; border-radius: 50px; text-align: center; font-size: 32px; box-shadow: 2px 2px 15px rgba(0,0,0,0.2); z-index: 1000; display: flex; justify-content: center; align-items: center; text-decoration: none; transition: all 0.3s ease; animation: pulse-wa 2s infinite; }
+.wa-float:hover { transform: scale(1.1); background-color: #20B858; box-shadow: 2px 2px 20px rgba(0,0,0,0.3); animation: none; }
+@keyframes pulse-wa {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* ========================================= */
+/* --- Efek Scroll Animation (Fade In Up) --- */
+/* ========================================= */
+.hidden-anim { opacity: 0; transform: translateY(50px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.show-anim { opacity: 1 !important; transform: translateY(0) !important; }
+
+/* Efek Delay Animasi */
+.card:nth-child(2) { transition-delay: 0.2s; }
+.card:nth-child(3) { transition-delay: 0.4s; }
+.project-item:nth-child(2), .project-item:nth-child(6) { transition-delay: 0.1s; }
+.project-item:nth-child(3), .project-item:nth-child(7) { transition-delay: 0.2s; }
+.project-item:nth-child(4) { transition-delay: 0.3s; }
+.project-item:nth-child(5) { transition-delay: 0.4s; }
+.hero-box { transition-delay: 0.1s; }
+.hero-desc { transition-delay: 0.3s; }
+.hero-image { transition-delay: 0.5s; }
+
+/* ========================================= */
+/* --- Responsiveness (Mobile Fixes) --- */
+/* ========================================= */
+@media screen and (max-width: 900px) {
+    .menu-toggle { display: block; }
+    nav { padding: 15px 6%; }
+    nav.nav-pill { top: 10px; left: 3%; right: 3%; width: 94%; border-radius: 30px; padding: 15px 5%; }
+    .nav-links { position: absolute; top: 100%; left: 0; right: 0; background-color: var(--nav-bg-transparent); flex-direction: column; align-items: center; padding: 20px 0; gap: 20px; border-radius: 0 0 20px 20px; clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transition: clip-path 0.4s ease-in-out, top 0.4s ease, border-radius 0.4s ease; }
+    .nav-links.show-menu { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+    nav.nav-pill .nav-links { top: 110%; border-radius: 20px; background-color: var(--nav-pill-bg); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    
+    .section-hero, .section-contact { flex-direction: column; text-align: center; gap: 40px;}
+    .hero-desc { text-align: center; } 
+    .line-center { left: 15px; transform: none; }
+    .time-content { width: 100%; margin-left: 15px !important; }
+    .time-content.left { flex-direction: row-reverse; justify-content: flex-end; }
+    .time-content.left span { margin-right: 0; margin-left: 15px; text-align: left; }
+    .time-content.left .h-line { margin-left: 0; margin-right: -2px; }
+    .project-grid { grid-template-columns: repeat(2, 1fr); }
+    .social-pill { flex-direction: row; padding: 15px 30px; }
+    
+    /* WhatsApp di Mobile */
+    .wa-float { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 26px; }
+}

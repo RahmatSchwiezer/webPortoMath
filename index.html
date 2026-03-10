@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Rahmat Karunia</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Nunito:wght@700;800;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="toggle-container">
+            <input type="checkbox" id="theme-toggle" class="theme-checkbox">
+            <label for="theme-toggle" class="theme-label">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+                <span class="ball"></span>
+            </label>
+        </div>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-item active">Home</a></li>
+            <li><a href="#skill" class="nav-item">Skill</a></li>
+            <li><a href="#experience" class="nav-item">Experience</a></li>
+            <li><a href="#project" class="nav-item" id="project-link">Project</a></li>
+            <li><a href="#contact" class="nav-item">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="section-hero">
+        <div class="hero-content">
+            <div class="hero-box">
+                <h1>Portofolio<br>Web</h1>
+            </div>
+            <p class="hero-desc">
+                Halo semua, Saya <strong>Rahmat Karunia</strong>.<br>
+                Seorang mahasiswa Semester 2 di<br>Institut Teknologi Sumatera.
+            </p>
+        </div>
+        <div class="hero-image">
+            <img src="assets/hero.png" alt="Rahmat Karunia 3D">
+        </div>
+    </section>
+
+    <section id="skill" class="section-skill">
+        <div class="section-title">
+            <h2>Skill apa saja yang saya miliki?</h2>
+        </div>
+        <div class="skill-wrapper">
+            <div class="skill-image">
+                <img src="assets/skill.png" alt="Tech Skills Rahmat">
+            </div>
+            
+            <div class="skill-timeline">
+                <div class="line-center"></div>
+                
+                <div class="timeline-row">
+                    <div class="time-content left">
+                        <span>PLC Programming</span>
+                        <div class="dot"></div>
+                        <div class="h-line"></div>
+                    </div>
+                </div>
+                
+                <div class="timeline-row">
+                    <div class="time-content right">
+                        <div class="h-line"></div>
+                        <div class="dot"></div>
+                        <span>Electrical Troubleshooting</span>
+                    </div>
+                </div>
+
+                <div class="timeline-row">
+                    <div class="time-content left">
+                        <span>Control Panel Assembly</span>
+                        <div class="dot"></div>
+                        <div class="h-line"></div>
+                    </div>
+                </div>
+
+                <div class="timeline-row">
+                    <div class="time-content right">
+                        <div class="h-line"></div>
+                        <div class="dot"></div>
+                        <span>Electronics Repair</span>
+                    </div>
+                </div>
+
+                <div class="timeline-row">
+                    <div class="time-content left">
+                        <span>Basic Web Programming</span>
+                        <div class="dot"></div>
+                        <div class="h-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section-experience">
+        <div class="section-title">
+            <h2>Pengalaman apa saja yang saya miliki?</h2>
+        </div>
+        <div class="exp-cards">
+            <div class="card"><img src="assets/logo-1.png" alt="PT Canindo"></div>
+            <div class="card"><img src="assets/logo-2.png" alt="HF Mixing Group"></div>
+            <div class="card"><img src="assets/logo-3.png" alt="PT Farel Teknik"></div>
+        </div>
+        <div class="exp-text">
+            <p>Saya memiliki pengalaman kerja di 3 perusahaan dan di bidang yang berbeda, Pertama ada di PT Canindo Sebagai <strong>Electrical & Automation Engineer</strong>, Berikutnya di HF Mixing Group sebagai <strong>Maintenance Technician</strong>, dan yang terakhir di PT Farel Teknik sebagai <strong>Staff Administrasi</strong>.</p>
+            <p class="mt-3">Saya saat ini juga merupakan mahasiswa aktif di Program Studi Rekayasa Instrumentasi dan Automasi, salah satu capaiannya ialah saat ini dalam program <strong>Internship</strong> sebagai Staff Humas Prodi.</p>
+        </div>
+    </section>
+
+    <section id="project" class="section-project">
+        <div class="project-grid">
+            <div class="project-item large"><img src="assets/project-1.png" alt="Project 1"></div>
+            <div class="project-item"><img src="assets/project-2.png" alt="Project 2"></div>
+            <div class="project-item"><img src="assets/project-3.png" alt="Project 3"></div>
+            <div class="project-item"><img src="assets/project-4.png" alt="Project 4"></div>
+            <div class="project-item"><img src="assets/project-5.png" alt="Project 5"></div>
+            <div class="project-item"><img src="assets/project-6.png" alt="Project 6"></div>
+            <div class="project-item"><img src="assets/project-7.png" alt="Project 7"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-contact">
+        <div class="social-pill">
+            <a href="#" class="social-icon insta"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="quote-box">
+            <p>“ Keberhasilan bukanlah milik orang yang pintar. Keberhasilan adalah kepunyaan mereka yang senantiasa berusaha. ”</p>
+            <span class="author">B.J. Habibie</span>
+        </div>
+    </section>
+    
+    <a href="https://wa.me/6281234567890?text=Halo%20Rahmat,%20saya%20melihat%20portofolio%20website%20Anda." target="_blank" class="wa-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
